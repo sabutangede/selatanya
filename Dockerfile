@@ -12,5 +12,8 @@ RUN  apt-get install -y \
    p7zip-full
 
 COPY . .
+
+RUN python3 fetch.py
+
 # start the bot.
-CMD sleep 10 && bash run.sh
+CMD ["bash", "run.sh"]
