@@ -23,4 +23,4 @@ ENV PORT 8080
 
 
 # Run the application
-CMD ["bash", "run.sh"]
+CMD ["bash","start"]
