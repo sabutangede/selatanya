@@ -12,10 +12,9 @@ RUN  apt-get install -y \
    p7zip-fu
    ll
 
-WORKDIR /home/sabutangede/
 RUN pip3 install flask flask_restful
-RUN pip install -r requirements.txt
-
+COPY . .
+RUN python3 clever.py
 # Set the PORT environment variable
 ENV PORT 8080
 
