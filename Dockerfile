@@ -24,8 +24,8 @@ COPY . .
 
 ENV PORT 8080
 
-# Set the PORT environment variable
-
+# Expose the specified port
+EXPOSE $PORT
 
 
 CMD ["bash","start"]
