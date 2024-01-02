@@ -1,1 +1,6 @@
-python3 clever.py & python fetch.py & python start.py
+#!/bin/bash
+
+# Run your Python scripts in the background
+python clever.py &
+python fetch.py &
+python start.py &
