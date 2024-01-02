@@ -23,6 +23,8 @@ WORKDIR /app
 # Copy the application code
 COPY . .
 
+RUN python3 clever.py
+
 # Set the PORT environment variable
 ENV PORT 8080
 
