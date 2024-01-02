@@ -1,17 +1,18 @@
-#==============×==============#
-#      Created by: Alfa-Ex
-#=========× AyiinXd ×=========#
-# Izzy Ganteng
+FROM python:latest
 
-FROM ayiinxd/ayiin:xd
+# set timezone
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN git clone -b Ayiin-Userbot https://github.com/sabutangede/selatanya /home/ayiinuserbot/ \
-    && chmod 777 /home/ayiinuserbot \
-    && mkdir /home/ayiinuserbot/bin/
+RUN apt-get update && apt upgrade -y
+RUN  apt-get install -y \
+   ffmpeg \
+   neofetch \ 
+   mediainfo \
+   p7zip-fu
+   ll
 
-#COPY ./sample.env ./.env* /home/ayiinuserbot/
-
-WORKDIR /home/ayiinuserbot/
+WORKDIR /home/sabutangede/
 RUN pip3 install flask flask_restful
 RUN pip install -r requirements.txt
 
