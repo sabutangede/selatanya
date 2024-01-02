@@ -18,8 +18,8 @@ RUN apt-get update \
 # Install Flask and Flask-RESTful
 RUN pip3 install flask flask_restful
 
-# Expose port 8080
-EXPOSE 8080
+# Set the PORT environment variable
+ENV PORT 8080
 
 # Copy the application code
 COPY . .
