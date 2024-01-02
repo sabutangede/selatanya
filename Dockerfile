@@ -13,9 +13,8 @@ RUN  apt-get install -y \
    ll
 
 RUN pip3 install flask flask_restful
-COPY . .
+ENV PORT 8080
 RUN python3 clever.py
 # Set the PORT environment variable
-ENV PORT 8080
 
 CMD ["bash","start"]
