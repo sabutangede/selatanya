@@ -21,8 +21,6 @@ RUN pip3 install flask flask_restful
 # Set the PORT environment variable
 ENV PORT 8080
 
-# Copy the application code
-COPY . .
 
 # Run the application
 CMD ["bash", "run.sh"]
