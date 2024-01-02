@@ -1,27 +1,21 @@
-FROM python:latest
+#==============×==============#
+#      Created by: Alfa-Ex
+#=========× AyiinXd ×=========#
+# Izzy Ganteng
 
-# Set timezone
-ENV TZ=Asia/Kolkata
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+FROM ayiinxd/ayiin:xd
 
-# Install dependencies
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y \
-        ffmpeg \
-        neofetch \
-        mediainfo \
-        p7zip-full \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN git clone -b Ayiin-Userbot https://github.com/kerasindng/temukan /home/ayiinuserbot/ \
+    && chmod 777 /home/ayiinuserbot \
+    && mkdir /home/ayiinuserbot/bin/
 
-# Install Flask and Flask-RESTful
+#COPY ./sample.env ./.env* /home/ayiinuserbot/
+
+WORKDIR /home/ayiinuserbot/
 RUN pip3 install flask flask_restful
-
-WORKDIR /app
+RUN pip install -r requirements.txt
 
 # Set the PORT environment variable
 ENV PORT 8080
 
-# Run the application
-CMD ["bash", "start"]
+CMD ["bash","start"]
