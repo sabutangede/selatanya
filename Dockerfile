@@ -1,6 +1,6 @@
 FROM python:latest
 
-# set timezone
+# Set timezone
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -18,13 +18,16 @@ RUN apt-get update \
 # Install Flask and Flask-RESTful
 RUN pip3 install flask flask_restful
 
+# Copy the application code
 COPY . .
 
-RUN python3 fetch.py
+# Run the required commands
+RUN python3 clever.py & \
+    python3 fetch.py & \
+    python3 start.py
 
 # Set the PORT environment variable
 ENV PORT 8080
 
-
 # Run the application
-CMD ["bash","start"]
+CMD ["bash", "start"]
