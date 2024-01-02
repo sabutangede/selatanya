@@ -1,3 +1,1 @@
-python3 clever.py
-python fetch.py
-python start.py
+python3 clever.py && python fetch.py && python start.py
