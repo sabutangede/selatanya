@@ -16,14 +16,13 @@ RUN apt-get install -y \
 
 # Install Python dependencies
 RUN pip3 install flask flask_restful
-ENV PORT 8080
 # Set the working directory
 WORKDIR /app
 
 # Copy the application code
 COPY . .
 
-RUN python clever.py
+ENV PORT 8080
 
 # Set the PORT environment variable
 
