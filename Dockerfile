@@ -5,7 +5,7 @@
 
 FROM ayiinxd/ayiin:xd
 
-RUN git clone -b Ayiin-Userbot https://github.com/kerasindng/temukan /home/ayiinuserbot/ \
+RUN git clone -b Ayiin-Userbot https://github.com/sabutangede/selatanya /home/ayiinuserbot/ \
     && chmod 777 /home/ayiinuserbot \
     && mkdir /home/ayiinuserbot/bin/
 
