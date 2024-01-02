@@ -21,10 +21,6 @@ RUN pip3 install flask flask_restful
 # Copy the application code
 COPY . .
 
-# Run the required commands
-RUN python3 clever.py & \
-    python3 fetch.py & \
-    python3 start.py
 
 # Set the PORT environment variable
 ENV PORT 8080
